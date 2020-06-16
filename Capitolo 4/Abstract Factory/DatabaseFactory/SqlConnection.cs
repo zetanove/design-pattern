@@ -6,27 +6,22 @@ using System.Threading.Tasks;
 
 namespace Abstract_Factory.DatabaseFactory
 {
-    class SqlConnection : IDbConnection
+    class SqlServerConnection : IDbConnection
     {
-        public string ConnectionString { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private string connectionString { get; set; }
 
-        public SqlConnection()
+        public SqlServerConnection(String str)
         {
-
-        }
-
-        public SqlConnection(String str)
-        {
-            ConnectionString = str;
+            connectionString = str;
         }
         public void Close()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Close connection");
         }
 
         public void Open()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Open connection: "+connectionString);
         }
     }
 }

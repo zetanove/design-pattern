@@ -9,16 +9,21 @@ namespace Abstract_Factory
 {
     class Client
     {
-        static IDatabaseAbstractFactory factory;
+        static IDatabaseAbstractFactory dbFactory;
         static void Main(string[] args)
         {
-            if (args == null || (args.Length > 1 && args[0] == "sql"))
+            string connectionString = "Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;";
+            if (args == null || args.Length==0 )
             {
-                factory = new SQLServerFactory();                
+                dbFactory=DatabaseAbstractFactory.GetFactory("sql");
+            }
+            else if (args.Length > 1)
+            {
+                dbFactory = DatabaseAbstractFactory.GetFactory(args[0]);
             }
 
-            IDbConnection conn = factory.CreateConnection(args[1]);
-            var cmd = factory.CreateCommand(conn, "SELECT * FROM Clienti");
+            IDbConnection conn = dbFactory.CreateConnection(connectionString);
+            var cmd = dbFactory.CreateCommand(conn, "SELECT * FROM Clienti");
             cmd.Execute();
         }
     }

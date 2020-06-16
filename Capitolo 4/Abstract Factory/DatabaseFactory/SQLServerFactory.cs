@@ -10,12 +10,12 @@ namespace Abstract_Factory.DatabaseFactory
     {
         public IDbCommand CreateCommand(IDbConnection connection, string sql)
         {
-            throw new NotImplementedException();
+            return new SqlServerCommand(connection, sql);
         }
 
         public IDbConnection CreateConnection(string connString)
         {
-            return new SqlConnection(connString);
+            return new SqlServerConnection(connString);
         }
     }
 }

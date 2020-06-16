@@ -2,6 +2,6 @@
 {
     interface IDbCommand
     {
-        void Execute();
+        object Execute();
     }
 }

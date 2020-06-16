@@ -2,7 +2,6 @@
 {
     interface IDbConnection
     {
-        string ConnectionString { get; set; }
         void Open();
         void Close();
     }

@@ -47,6 +47,7 @@
     <Compile Include="DatabaseFactory\IDbCommand.cs" />
     <Compile Include="DatabaseFactory\IDbConnection.cs" />
     <Compile Include="DatabaseFactory\SqlConnection.cs" />
+    <Compile Include="DatabaseFactory\SqlServerCommand.cs" />
     <Compile Include="DatabaseFactory\SQLServerFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
