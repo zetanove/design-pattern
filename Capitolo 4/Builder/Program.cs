@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Builder
 {
@@ -12,10 +13,17 @@ namespace Builder
         {
             // The code provided will print ‘Hello World’ to the console.
             // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            DocumentDirector dir = new DocumentDirector();
+            
+            JsonDocBuilder builder = new JsonDocBuilder();
+            dir.ConstructDocumento(1, builder);
+            string json = builder.GetResult().ToString();
+            Console.WriteLine(json);
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            XmlDocBuilder xmlBuilder = new XmlDocBuilder();
+            dir.ConstructDocumento(1, xmlBuilder);
+            XmlDocument xml = xmlBuilder.GetResult();
+            Console.WriteLine(xml.ToString());
         }
     }
 }
