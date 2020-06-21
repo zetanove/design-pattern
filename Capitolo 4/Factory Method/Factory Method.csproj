@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alert.cs" />
+    <Compile Include="EmailMessenger.cs" />
+    <Compile Include="Messenger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebRequestCreator.cs" />
+    <Compile Include="SMSMessenger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
