@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,16 @@ namespace Prototype
             p3.Contatti[0].Text = "anto@outlook.com";
             Console.WriteLine(p1);
             Console.WriteLine(p3);
+
+
+            Bullet b = new Bullet("#ff0000", 1);
+            PrototypeManager manager = new PrototypeManager();
+            manager.AddPrototype("red", b);
+
+            Bullet clone1 = (Bullet) manager.GetPrototype("red");
+            Bullet clone2 = (Bullet)manager.GetPrototype("red");
+            Bullet clone3 = (Bullet)manager.GetPrototype("red");
+
             Console.Read();
         }
     }

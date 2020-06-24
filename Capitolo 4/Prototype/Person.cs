@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,13 @@ namespace Prototype
             nome = n;
             cognome = c;
             Contatti = new List<Contatto>();
+        }
+
+        public Persona(Persona originale)
+        {
+            this.nome = originale.nome;
+            this.cognome = originale.cognome;
+            this.Contatti = originale.Contatti;
         }
 
         public string GetNome()
@@ -52,13 +60,16 @@ namespace Prototype
         
         public Prototype Clone()
         {
-            //Shallow clone, i contatti rimangono per riferimento
+            //Shallow copy, i contatti rimangono per riferimento
             //return (Person)this.MemberwiseClone();
+
+            //con costruttore di copia
+            //Persona clone = new Persona(this);
 
 
             //deep
             Persona clone = (Persona)this.MemberwiseClone();
-            clone.Contatti=new List<Contatto>();
+            clone.Contatti = new List<Contatto>();
             foreach (var c in this.Contatti)
                 clone.Contatti.Add((Contatto)c.Clone());
 
