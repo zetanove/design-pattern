@@ -21,6 +21,9 @@ namespace Builder
 
     public class RigaDocumento
     {
+        private string riga;
+        private double totale;
+
         public RigaDocumento(string riga, double totale)
         {
             this.Descrizione = riga;
