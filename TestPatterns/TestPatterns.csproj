@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B1F9631-E0F8-4298-90B1-DA30913604A8}</ProjectGuid>
+    <ProjectGuid>{C82AF99B-0B6E-46DE-BC08-56D3C180DD78}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Factory_Method</RootNamespace>
-    <AssemblyName>Factory Method</AssemblyName>
+    <RootNamespace>TestPatterns</RootNamespace>
+    <AssemblyName>TestPatterns</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,15 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alert.cs" />
-    <Compile Include="EmailMessenger.cs" />
-    <Compile Include="Messenger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SMSMessenger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capitolo 4\Prototype\Prototype.csproj">
+      <Project>{a1dabc83-965d-408d-9181-ca0dcdcab639}</Project>
+      <Name>Prototype</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

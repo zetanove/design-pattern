@@ -10,10 +10,33 @@ namespace Factory_Method
     {
         static void Main(string[] args)
         {
-            WebRequestCreator requestCreator= new HttpRequestCreator();
-            var req= requestCreator.SendRequest("http://");
-           
+            string text = "messaggio di avviso";
+            string title = "Warning";
+            string recipient = "antonio@dominio.com";
 
+
+
+            Messenger messenger = null;
+            if (recipient.Contains("@"))
+            {
+                messenger = Messenger.GetMessenger(Messenger.AlertKind.Email);
+            }
+            else messenger = Messenger.GetMessenger(Messenger.AlertKind.SMS);
+
+            Alert alert=messenger.CreateAlert(title, text, recipient);
+            messenger.SendAlert(alert);
+
+            recipient = "+39123456789";
+            if (recipient.Contains("@"))
+            {
+                messenger = Messenger.GetMessenger(Messenger.AlertKind.Email);
+            }
+            else messenger = Messenger.GetMessenger(Messenger.AlertKind.SMS);
+
+            alert = messenger.CreateAlert(title, text, recipient);
+            messenger.SendAlert(alert);
+
+            Console.ReadLine();
         }
     }
 }

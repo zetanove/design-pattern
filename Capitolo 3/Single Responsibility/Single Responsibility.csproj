@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B1F9631-E0F8-4298-90B1-DA30913604A8}</ProjectGuid>
+    <ProjectGuid>{A6CCCBE7-F256-4FC2-811F-5738644965A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Factory_Method</RootNamespace>
-    <AssemblyName>Factory Method</AssemblyName>
+    <RootNamespace>Single_Responsibility</RootNamespace>
+    <AssemblyName>Single Responsibility</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alert.cs" />
-    <Compile Include="EmailMessenger.cs" />
-    <Compile Include="Messenger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SMSMessenger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
