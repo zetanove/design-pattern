@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge Logger", "Structural
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite UI", "Structural Patterns\Composite UI\Composite UI.csproj", "{4118D1AE-5A3A-4FCD-B08A-C5CA1043DF4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Structural Patterns\Decorator\Decorator.csproj", "{2F51D155-179A-4DF2-8B4B-C9C7A54ECBDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{4118D1AE-5A3A-4FCD-B08A-C5CA1043DF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4118D1AE-5A3A-4FCD-B08A-C5CA1043DF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4118D1AE-5A3A-4FCD-B08A-C5CA1043DF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F51D155-179A-4DF2-8B4B-C9C7A54ECBDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F51D155-179A-4DF2-8B4B-C9C7A54ECBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F51D155-179A-4DF2-8B4B-C9C7A54ECBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F51D155-179A-4DF2-8B4B-C9C7A54ECBDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{CE2BAEF2-5EFE-4C9B-96D7-4EE9E736D77A} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
 		{48EABF87-4606-4029-9A33-24BEBA089CFA} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
 		{4118D1AE-5A3A-4FCD-B08A-C5CA1043DF4D} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
+		{2F51D155-179A-4DF2-8B4B-C9C7A54ECBDD} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DE9BA25-D100-42A3-A4F9-C9E35D217944}
