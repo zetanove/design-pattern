@@ -30,5 +30,14 @@ namespace Builder
             }
             builder.AggiungiTotale(totale);
         }
+
+        public void ConstructDocumento(int id, FluentDocumentBuilder builder)
+        {
+            builder.AggiungiIntestazione("Acme INC.")
+                .AggiungiRiga("riga 1", 10)
+                .AggiungiRiga("riga 2",20)
+                .AggiungiTotale(30);
+            
+        }
     }
 }

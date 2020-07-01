@@ -54,4 +54,58 @@ namespace Builder
             return sb.ToString();
         }
     }
+
+    public class FluentJsonDocBuilder : FluentDocumentBuilder
+    {
+        public FluentJsonDocBuilder()
+        {
+            doc = new Documento();
+        }
+        public override FluentDocumentBuilder AggiungiIntestazione(string str)
+        {
+            doc.Intestazione = str;
+            return this;
+        }
+
+        public override FluentDocumentBuilder AggiungiRiga(string riga, double totale)
+        {
+            doc.Righe.Add(new RigaDocumento(riga, totale));
+            return this;
+        }
+
+        public override FluentDocumentBuilder AggiungiTotale(double totale)
+        {
+            doc.TotaleDocumento = totale;
+            return this;
+        }
+
+        public string GetResult()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("{");
+            sb.AppendLine("\"intestazione\":\"" + doc.Intestazione + "\",");
+
+            sb.AppendLine("\"righe\":");
+
+            sb.AppendLine(" [");
+            for (int i = 0; i < doc.Righe.Count; i++)
+            {
+                var riga = doc.Righe[i];
+                sb.AppendLine("  {");
+                sb.AppendLine("\"descrizione\": \"" + riga.Descrizione + "\",");
+                sb.AppendLine("\"totaleRiga\": " + riga.TotaleRiga);
+                sb.AppendLine("  }");
+                if (i < doc.Righe.Count - 1)
+                {
+                    sb.AppendLine(",");
+                }
+            }
+
+            sb.AppendLine(" ],");
+
+            sb.AppendLine("\"totaleDocumento\":" + doc.TotaleDocumento);
+            sb.AppendLine("}");
+            return sb.ToString();
+        }
+    }
 }

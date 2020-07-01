@@ -24,6 +24,12 @@ namespace Builder
             dir.ConstructDocumento(1, xmlBuilder);
             XmlDocument xml = xmlBuilder.GetResult();
             Console.WriteLine(xml.ToString());
+
+
+            FluentJsonDocBuilder fluent = new FluentJsonDocBuilder();
+            dir.ConstructDocumento(1, fluent);
+            json = fluent.GetResult().ToString();
+            Console.WriteLine(json);
         }
     }
 }
