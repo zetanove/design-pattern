@@ -10,43 +10,152 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            ILogger log=new ConsoleLog()
+            Shape rect = ShapeFactory.GetInstance().GetShape(Shapes.Rectangle);
+            rect.Render();
+
+            GraphicDecorator border=new BorderDecorator(rect, "rosso", 2);
+            border.Render();
+
+            GraphicDecorator dec=new FillDecorator(border, "giallo", "nero", "destra");
+            dec.Render();
+            
+            GraphicDecorator all=new BorderDecorator(
+                new FillDecorator(
+                        new ShadowDecorator(rect, "nero", 0.6), 
+                        "giallo", "verde", "destra"),
+                 "rosso", 2);
+
+            all.Render();
+ 
+            Console.ReadLine();
         }
     }
 
-    public interface ILogger
+    enum Shapes
     {
-        void Log(String msg);
+        Rectangle,
+        Triangle
     }
-
-    public abstract class Logger : ILogger
+    class ShapeFactory
     {
-        public ILogger Component { get; set; }
-        public abstract void Log(string msg);
-        
-        public void SetComponent(ILogger il)
+        private static ShapeFactory instance;
+        private ShapeFactory()
         {
-            Component = il;
+        }
+
+        public static ShapeFactory GetInstance()
+        {
+            if(instance==null)
+                instance=new ShapeFactory();
+            return instance;
+        }
+
+        public Shape GetShape(Shapes type)
+        {
+            if(type== Shapes.Rectangle)
+                return new Rectangle(){ Height = 10, Width = 20};
+
+            return null;
         }
     }
 
-    public class ConsoleLog : Logger
+    //Component
+    public abstract class Shape
     {
-        public override void Log(string msg)
+        public abstract void Render();
+    }
+
+    //Concrete component
+    public class Rectangle : Shape
+    {
+        public double Height { get; set; }
+        public double Width { get; set; }
+
+        public override void Render()
         {
-            this.Component.Log(msg);
-            Console.WriteLine(msg);
+            Console.WriteLine($"Disegno un rettangolo di dimensioni {Width}x{Height}");
         }
     }
 
-    class FileLog : Logger
+    //Decorator
+    public abstract class GraphicDecorator : Shape
     {
-        public override void Log(string msg)
+        private Shape component;
+
+        public Shape Component
         {
-            this.Component.Log(msg);
-            //throw new NotImplementedException();
+            get { return component; }
+        }
+
+        public GraphicDecorator(Shape shape)
+        {
+            Console.WriteLine("Aggiunto " + this.GetType().Name + " al componente "+shape.GetType().Name);
+            this.component = shape;
         }
 
 
+        public override void Render()
+        {
+            component.Render();
+        }
+    }
+
+    class BorderDecorator : GraphicDecorator
+    {
+        private string color;
+        private int size;
+
+        public BorderDecorator(Shape shape, string color, int size) : base(shape)
+        {
+           
+            this.color = color;
+            this.size = size;
+        }
+
+        public override void Render()
+        {
+            base.Render();
+            Console.WriteLine("Disegno bordo di " + size + "px " + color);
+        }
+    }
+
+    class FillDecorator : GraphicDecorator
+    {
+        private string colorStart;
+        private string colorEnd;
+        private string direction;
+
+        public FillDecorator(Shape shape, string cs, string ce, string dir): base(shape)
+        {
+            colorStart = cs;
+            colorEnd = ce;
+            direction = dir;
+        }
+
+        public override void Render()
+        {
+            
+            base.Render();
+            Console.WriteLine($"Riempimento con colore da {colorStart} a {colorEnd} direzione {direction}");
+        }
+    }
+
+    class ShadowDecorator : GraphicDecorator
+    {
+        private string color;
+        private double opacity;
+
+        public ShadowDecorator(Shape shape, string color, double op) : base(shape)
+        {
+
+            this.color = color;
+            this.opacity = op;
+        }
+
+        public override void Render()
+        {
+            Console.WriteLine("Disegno prima rettangolo per l'ombra di colore " + color + " opacità " + opacity);
+            base.Render();
+        }
     }
 }
