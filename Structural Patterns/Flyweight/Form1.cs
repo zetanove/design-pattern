@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -58,24 +59,29 @@ namespace Flyweight
             List<string> colors = new List<string>() { "Red", "Blue", "Yellow" };
             for (int i = 0; i < 100; i++)
             {
+                string randomColor = colors.OrderBy(g => Guid.NewGuid()).First();
                 if (rnd.Next(1,19)>5)
                 {
-                    Circle c = (Circle)factory.GetShape(typeof(Circle), colors.OrderBy(g => Guid.NewGuid()).First());
-                    c.Radius = 10;
+                    Circle c = (Circle)factory.GetShape(typeof(Circle), randomColor);
+                    //Circle c = new Circle(randomColor);
+                    c.Radius = 5;
                     Shapes.Add(c);
                 }
                 else
                 {
-                    Square c = (Square)factory.GetShape(typeof(Square), colors.OrderBy(g => Guid.NewGuid()).First());
-                    c.Width = 10;
-                    Shapes.Add(c);
+                    Square s = (Square)factory.GetShape(typeof(Square), randomColor);
+                    //Square s = new Square(randomColor);
+                    s.Width = 10;
+                    Shapes.Add(s);
                 }
                 
             }
 
-            labTotIstanze.Text = $"Figure totali: {Shapes.Count} - Istanze : {factory.Count}";
+            Process proc = Process.GetCurrentProcess();
+            
+            labTotIstanze.Text = $"Figure totali: {Shapes.Count} - Istanze : {factory.Count} - Memory: {proc.PrivateMemorySize64/1024} MB";
 
-            panel1.Invalidate();
+            panel1.Refresh();
         }
     }
 }
@@ -115,9 +121,7 @@ public class ShapeFactory
                 return s;
             }
         }
-
         return null;
-
     }
 }
 
@@ -141,8 +145,8 @@ public class Circle : IShape
         }
     }
 
-    public int Radius;
-    public Point Position;
+    public int Radius { get; set; }
+    public Point Position { get; set; }
 
     public Circle(string c)
     {
