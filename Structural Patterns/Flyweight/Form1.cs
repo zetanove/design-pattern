@@ -64,14 +64,14 @@ namespace Flyweight
                 {
                     Circle c = (Circle)factory.GetShape(typeof(Circle), randomColor);
                     //Circle c = new Circle(randomColor);
-                    c.Radius = 5;
+                    //c.Radius = 5;
                     Shapes.Add(c);
                 }
                 else
                 {
                     Square s = (Square)factory.GetShape(typeof(Square), randomColor);
                     //Square s = new Square(randomColor);
-                    s.Width = 10;
+                    //s.Width = 10;
                     Shapes.Add(s);
                 }
                 
