@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualProxy", "Structural 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtectionProxy", "Structural Patterns\ProtectionProxy\ProtectionProxy.csproj", "{3856B451-C10D-484E-8DF7-80A59EAC92E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chain Of Responsibility", "Behavioral Patterns\Chain Of Responsibility\Chain Of Responsibility.csproj", "{AC5CDC85-A330-44B2-8635-26B169CDB85B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,10 @@ Global
 		{3856B451-C10D-484E-8DF7-80A59EAC92E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3856B451-C10D-484E-8DF7-80A59EAC92E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3856B451-C10D-484E-8DF7-80A59EAC92E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5CDC85-A330-44B2-8635-26B169CDB85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5CDC85-A330-44B2-8635-26B169CDB85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5CDC85-A330-44B2-8635-26B169CDB85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5CDC85-A330-44B2-8635-26B169CDB85B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +153,7 @@ Global
 		{C43EF840-BC0D-4B0B-9A66-A0B394623C4D} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
 		{AB399E7A-FE87-48B9-9730-5C497F9A2A70} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
 		{3856B451-C10D-484E-8DF7-80A59EAC92E3} = {6104B755-0E5D-43C2-91F5-B4F676C1E858}
+		{AC5CDC85-A330-44B2-8635-26B169CDB85B} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DE9BA25-D100-42A3-A4F9-C9E35D217944}
