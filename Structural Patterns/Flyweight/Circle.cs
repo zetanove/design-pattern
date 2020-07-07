@@ -22,7 +22,8 @@ public class Circle : IShape
     }
 
     private Point position;
-    public Point Position{ 
+    public Point Position
+    { 
         get
         {
             return position;
