@@ -42,7 +42,7 @@ namespace CommandPattern
     }
 
     //Invoker
-    class CommandManager
+    class CommandInvoker
     {
         private Stack commandStack = new Stack();
 

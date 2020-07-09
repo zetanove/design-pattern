@@ -14,7 +14,7 @@ namespace CommandPattern
     public partial class Form1 : Form
     {
         Document document;
-        CommandManager commandManager;
+        CommandInvoker invoker;
 
         public Form1()
         {
@@ -23,18 +23,18 @@ namespace CommandPattern
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            commandManager = new CommandManager();
+            invoker = new CommandInvoker();
             document = new Document(this.textBox1);
         }
 
         private void btCut_Click(object sender, EventArgs e)
         {
-            commandManager.ExecuteCommand(new CutCommand(document));
+            invoker.ExecuteCommand(new CutCommand(document));
         }
 
         private void btUndo_Click(object sender, EventArgs e)
         {
-            commandManager.Undo();
+            invoker.Undo();
         }
     }
 }
