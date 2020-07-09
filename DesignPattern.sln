@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Capitolo 4\Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPatterns", "TestPatterns\TestPatterns.csproj", "{C82AF99B-0B6E-46DE-BC08-56D3C180DD78}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Capitolo 3", "Capitolo 3", "{E51DF2B3-DB11-4C7A-BACD-802B6B602252}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Software Design", "Software Design", "{E51DF2B3-DB11-4C7A-BACD-802B6B602252}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Single Responsibility", "Capitolo 3\Single Responsibility\Single Responsibility.csproj", "{A6CCCBE7-F256-4FC2-811F-5738644965A5}"
 EndProject
