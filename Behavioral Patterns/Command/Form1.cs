@@ -19,13 +19,10 @@ namespace CommandPattern
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
             invoker = new CommandInvoker();
             document = new Document(this.textBox1);
         }
+
 
         private void btCut_Click(object sender, EventArgs e)
         {

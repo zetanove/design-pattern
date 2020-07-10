@@ -1,52 +1,15 @@
 ﻿using System.Collections;
-using System.Windows.Forms;
 
 namespace CommandPattern
 {
-    //Receiver
-    public class Document
-    {
-        private TextBox textBox;
 
-        public Document(TextBox txt)
-        {
-            this.textBox = txt;
-        }
-
-        public string Text
-        {
-            get { return textBox.Text; }
-            set { textBox.Text = value; }
-        }
-
-
-        public void Cut()
-        {
-            textBox.Cut();
-        }
-
-        public void Paste()
-        {
-            textBox.Paste();
-        }
-
-        public void Copy()
-        {
-            textBox.Copy();
-        }
-    }
-
-    public interface ICommand
-    {
-        void Execute();
-    }
 
     //Invoker
     class CommandInvoker
     {
         private Stack commandStack = new Stack();
 
-        public void ExecuteCommand(ICommand cmd)
+        public void ExecuteCommand(DocumentCommand cmd)
         {
             cmd.Execute();
             if (cmd is UndoableCommand)
@@ -66,8 +29,8 @@ namespace CommandPattern
     }
 
 
-
-    public abstract class DocumentCommand : ICommand
+    //Command
+    public abstract class DocumentCommand
     {
         protected Document document;
 
@@ -81,7 +44,7 @@ namespace CommandPattern
 
     public abstract class UndoableCommand: DocumentCommand
     {
-        protected string previousText;
+        protected string testoPrecedente;
 
         public UndoableCommand(Document doc):base(doc)
         {
@@ -90,11 +53,12 @@ namespace CommandPattern
         public abstract void Undo();
     }
 
+    //Concrete Command
     public class CutCommand : UndoableCommand
     {
         public CutCommand(Document doc): base(doc)
         {
-            this.previousText = doc.Text;
+            this.testoPrecedente = doc.Text;
         }
 
         public override void Execute()
@@ -104,7 +68,19 @@ namespace CommandPattern
 
         public override void Undo()
         {
-            document.Text = previousText;
+            document.Text = testoPrecedente;
+        }
+    }
+
+    public class CopyCommand : DocumentCommand
+    {
+        public CopyCommand(Document doc) : base(doc)
+        {
+        }
+
+        public override void Execute()
+        {
+            document.Copy();
         }
     }
 }
