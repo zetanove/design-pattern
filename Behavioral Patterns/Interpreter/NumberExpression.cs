@@ -13,7 +13,7 @@ namespace Interpreter
 
         public NumberExpression(String s)
         {
-            number = int.Parse(s);
+            number = double.Parse(s);
         }
 
         public double Interpret()

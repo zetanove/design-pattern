@@ -1,18 +1,14 @@
 ﻿namespace Interpreter
 {
-    public class MultExpression : AbstractExpression
-    {
-        AbstractExpression leftExpression;
-        AbstractExpression rightExpresion;
-        public MultExpression(AbstractExpression leftExpression, AbstractExpression rightExpresion)
+    public class MultExpression : BinaryExpression
+    {        
+        public MultExpression(AbstractExpression leftExpression, AbstractExpression rightExpression):base(leftExpression,rightExpression)
         {
-            this.leftExpression = leftExpression;
-            this.rightExpresion = rightExpresion;
         }
 
-        public double Interpret()
+        public override double Interpret()
         {
-            return leftExpression.Interpret() * rightExpresion.Interpret();
+            return leftExpression.Interpret() * rightExpression.Interpret();
         }
     }
 

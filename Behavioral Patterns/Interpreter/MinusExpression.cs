@@ -1,19 +1,14 @@
 ﻿namespace Interpreter
 {
-
-    public class DivideExpression : AbstractExpression
+    public class MinusExpression : BinaryExpression
     {
-        AbstractExpression leftExpression;
-        AbstractExpression rightExpresion;
-        public DivideExpression(AbstractExpression leftExpression, AbstractExpression rightExpresion)
+        public MinusExpression(AbstractExpression left, AbstractExpression right) : base(left, right)
         {
-            this.leftExpression = leftExpression;
-            this.rightExpresion = rightExpresion;
-        }
 
-        public double Interpret()
+        }
+        public override double Interpret()
         {
-            return leftExpression.Interpret() / rightExpresion.Interpret();
+            return leftExpression.Interpret() - rightExpression.Interpret();
         }
     }
 }

@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractExpression.cs" />
+    <Compile Include="BinaryExpression.cs" />
+    <Compile Include="DivideExpression.cs" />
+    <Compile Include="MathEval.cs" />
     <Compile Include="MinusExpression.cs" />
     <Compile Include="MultExpression.cs" />
     <Compile Include="NumberExpression.cs" />
