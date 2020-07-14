@@ -25,12 +25,12 @@ namespace Iterator
             }
         }
 
-        public TeamIterator CreateIterator()
+        public Iterator CreateIterator()
         {
             return new TeamIterator(this);
         }
 
-        public TeamIterator CreateRoleIterator(Ruolo ruolo)
+        public Iterator CreateRoleIterator(Ruolo ruolo)
         {
             return new TeamIterator(this, ruolo);
         }

@@ -11,14 +11,23 @@ namespace Iterator
         static void Main(string[] args)
         {
             Team team = new Team();
-            team.AddPlayer(new Player("antonio pelleriti", Ruolo.Portiere));
-            team.AddPlayer(new Player("donnarumma", Ruolo.Portiere));
-            team.AddPlayer(new Player("romagnoli", Ruolo.Difensore));
-            team.AddPlayer(new Player("kessie", Ruolo.Centrocampista));
-            team.AddPlayer(new Player("ibrahimovic", Ruolo.Attaccante));
+            team.AddPlayer(new Player("Antonio Pelleriti", Ruolo.Portiere));
+            team.AddPlayer(new Player("Gigio Donnarumma", Ruolo.Portiere));
+            team.AddPlayer(new Player("Alex Meret", Ruolo.Portiere));
+            team.AddPlayer(new Player("Alessio Romagnoli", Ruolo.Difensore));
+            team.AddPlayer(new Player("Leonardo Bonucci", Ruolo.Difensore));
+            team.AddPlayer(new Player("Francesco Acerbi", Ruolo.Difensore));
+            team.AddPlayer(new Player("Luca Pellegrini", Ruolo.Difensore));
+            team.AddPlayer(new Player("Alessndro Florenzi", Ruolo.Centrocampista));
+            team.AddPlayer(new Player("Federico Chiesa", Ruolo.Centrocampista));
+            team.AddPlayer(new Player("Lorenzo Insigne", Ruolo.Centrocampista));
+            team.AddPlayer(new Player("Marco Verratti", Ruolo.Centrocampista));
+            team.AddPlayer(new Player("Andrea Belotti", Ruolo.Attaccante));
+            team.AddPlayer(new Player("Ciro Immobile", Ruolo.Attaccante));
+            team.AddPlayer(new Player("Federico Bernardeschi", Ruolo.Attaccante));
 
             Console.WriteLine("Stampo tutta la squadra");
-            var it1=team.CreateIterator();
+            Iterator it1=team.CreateIterator();
             while(it1.HasNext())
             {
                 it1.MoveNext();
@@ -26,7 +35,7 @@ namespace Iterator
             }
 
             Console.WriteLine("Stampo solo i portieri");
-            var itr = team.CreateRoleIterator(Ruolo.Portiere);
+            Iterator itr = team.CreateRoleIterator(Ruolo.Portiere);
             while (itr.HasNext())
             {
                 itr.MoveNext();

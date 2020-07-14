@@ -2,7 +2,7 @@
 {
     public interface TeamAggregate
     {
-        TeamIterator CreateIterator();
-        TeamIterator CreateRoleIterator(Ruolo ruolo);
+        Iterator CreateIterator();
+        Iterator CreateRoleIterator(Ruolo ruolo);
     }
 }
