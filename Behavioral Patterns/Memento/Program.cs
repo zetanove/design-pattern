@@ -12,49 +12,7 @@ namespace Memento
     /// </summary>
 
 
-    //originator
-
-    public class Document
-    {
-        private string Text;
-        private int cursorPosition;
-
-        public DocumentState CreateMemento()
-        {
-            return new DocumentState(this.Text, this.cursorPosition);
-        }
-
-        public void SetStateFromMemento(DocumentState state)
-        {
-            this.Text = state.GetText();
-
-        }
-
-
-
-        public class DocumentState
-        {
-            private string text;
-            private int cursorPosition;
-
-            public DocumentState(string text, int position)
-            {
-                this.text = text;
-                this.cursorPosition = position;
-            }
-
-            public string GetText()
-            {
-                return text;
-            }
-
-            int GetPosition()
-            {
-                return cursorPosition;
-            }
-        }
-
-    }
+   
 
     class Program
     {
@@ -105,11 +63,8 @@ namespace Memento
     {
         private interface IMementoWide
         {
-            string Text
-            {
-                get;
-                set;
-            }
+            string GetText();
+            void SetText(string text);
         }
 
         private class Memento : IMementoNarrow, IMementoWide
@@ -121,41 +76,38 @@ namespace Memento
                 this.m_strText = strText;
             }
 
-            public string Text
+            public string GetText()
             {
-                get
-                {
-                    return this.m_strText;
-                }
-                set
-                {
-                    this.m_strText = value;
-                }
+                return this.m_strText;
+            }
+            public void SetText(string text)
+            {
+                this.m_strText = text;
             }
         }
 
-        private string m_strText = String.Empty;
+        private string text = String.Empty;
 
-        public Originator(string strText)
+        public Originator(string t)
         {
-            this.m_strText = strText;
+            this.text = t;
         }
 
         public string Text
         {
             get
             {
-                return this.m_strText;
+                return this.text;
             }
             set
             {
-                this.m_strText = value;
+                text = value;
             }
         }
 
         public IMementoNarrow SaveMemento()
         {
-            IMementoWide memento = new Memento(this.m_strText);
+            IMementoWide memento = new Memento(this.text);
 
             return (IMementoNarrow)memento;
         }
@@ -164,7 +116,7 @@ namespace Memento
         {
             try
             {
-                this.m_strText = ((IMementoWide)memento).Text;
+                this.text = ((IMementoWide)memento).GetText();
 
                 return true;
             }
