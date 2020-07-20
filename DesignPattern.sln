@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1209
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern", "DesignPattern.csproj", "{6A392E8D-FCF8-4D72-B5FE-624F71E99807}"
 EndProject
@@ -58,6 +58,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "Behavioral Patterns\Mediator\Mediator.csproj", "{40BA13E6-F783-40F3-8509-B521A21AC380}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento", "Behavioral Patterns\Memento\Memento.csproj", "{E05E94B2-617A-4177-B326-D94C863F44C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Behavioral Patterns\Observer\Observer.csproj", "{7CF6D979-072C-48A0-AC12-B40E7AB3BD87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +163,10 @@ Global
 		{E05E94B2-617A-4177-B326-D94C863F44C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E05E94B2-617A-4177-B326-D94C863F44C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E05E94B2-617A-4177-B326-D94C863F44C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF6D979-072C-48A0-AC12-B40E7AB3BD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF6D979-072C-48A0-AC12-B40E7AB3BD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF6D979-072C-48A0-AC12-B40E7AB3BD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF6D979-072C-48A0-AC12-B40E7AB3BD87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +195,7 @@ Global
 		{6E4CDDAA-2DE5-474C-B43D-E09B8015D9B1} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 		{40BA13E6-F783-40F3-8509-B521A21AC380} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 		{E05E94B2-617A-4177-B326-D94C863F44C6} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
+		{7CF6D979-072C-48A0-AC12-B40E7AB3BD87} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DE9BA25-D100-42A3-A4F9-C9E35D217944}
