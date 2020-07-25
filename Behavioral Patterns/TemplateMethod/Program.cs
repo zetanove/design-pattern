@@ -17,19 +17,33 @@ namespace TemplateMethod
         }
     }
 
-
-    public abstract class AbstractExporter
+    public abstract class Exporter
     {
-        public void ExportData(string table, string path)
+        public abstract void ExportData(string table, string path);
+    }
+
+    public abstract class AbstractExporter:Exporter
+    {
+        public sealed override void ExportData(string table, string path)
         {
+            OnStartExport();
             OpenConnection();
             ReadData(table);
             ExportToFile(path);
             CloseConnection();
-
+            OnEndExport();
             if (MustLog())
-                Log();
+                Log("message");
         }
+
+        protected virtual void OnStartExport()
+        {            
+        }
+
+        protected virtual void OnEndExport()
+        {
+        }
+
 
         private void OpenConnection()
         {
@@ -46,8 +60,9 @@ namespace TemplateMethod
             return false;
         }
 
-        protected virtual void Log()
+        protected virtual void Log(string msg)
         {
+            Console.WriteLine(msg);
         }      
 
         protected void ReadData(string table)
@@ -68,6 +83,21 @@ namespace TemplateMethod
         protected override bool MustLog()
         {
             return base.MustLog();
+        }
+
+    }
+
+
+    public class ExcelExporter : AbstractExporter
+    {
+        protected override void ExportToFile(string file)
+        {
+            Console.WriteLine($"ExcelExporter: Esporto i dati sul file {file}");
+        }
+
+        protected override bool MustLog()
+        {
+            return true;
         }
 
     }
