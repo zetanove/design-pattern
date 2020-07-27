@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Behavioral Patt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "Behavioral Patterns\TemplateMethod\TemplateMethod.csproj", "{DB60A149-CF3B-47EA-BE78-9718B1EFAB29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitor", "Behavioral Patterns\Visitor\Visitor.csproj", "{5796740C-07F4-456B-98FF-77BA49925CCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -185,6 +187,10 @@ Global
 		{DB60A149-CF3B-47EA-BE78-9718B1EFAB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB60A149-CF3B-47EA-BE78-9718B1EFAB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB60A149-CF3B-47EA-BE78-9718B1EFAB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5796740C-07F4-456B-98FF-77BA49925CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5796740C-07F4-456B-98FF-77BA49925CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5796740C-07F4-456B-98FF-77BA49925CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5796740C-07F4-456B-98FF-77BA49925CCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,6 +223,7 @@ Global
 		{AB385A4C-3B2B-4A64-A9C4-8C990DF78AD3} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 		{4351C381-239C-4C3D-A04B-FBD5FBD11481} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 		{DB60A149-CF3B-47EA-BE78-9718B1EFAB29} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
+		{5796740C-07F4-456B-98FF-77BA49925CCD} = {8FE4291E-6F74-4C29-833F-46E7D05E01A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DE9BA25-D100-42A3-A4F9-C9E35D217944}
